@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fresh Cuts Barber</title>
+
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: Arial, sans-serif; background: #000; color: #fff; }
+
+    header {
+      text-align: center;
+      padding: 60px 20px;
+      background: #111;
+    }
+
+    header h1 {
+      font-size: 3rem;
+      color: #C9A14A;
+    }
+
+    header p {
+      margin-top: 10px;
+      font-size: 1.2rem;
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 12px 25px;
+      background: #C9A14A;
+      color: #000;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 5px;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      padding: 15px;
+      background: #000;
+      border-bottom: 1px solid #333;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+    }
+
+    section {
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    h2 {
+      margin-bottom: 20px;
+      color: #C9A14A;
+    }
+
+    .services ul {
+      list-style: none;
+      max-width: 300px;
+      margin: auto;
+    }
+
+    .services li {
+      padding: 10px;
+      border-bottom: 1px solid #333;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      max-width: 300px;
+      margin: auto;
+      gap: 10px;
+    }
+
+    input, select, button {
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+    }
+
+    button {
+      background: #C9A14A;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #111;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Fresh Cuts Barber</h1>
+  <p>Clean fades. No waiting. Book your cut today.</p>
+  <a href="#booking" class="btn">Book Now</a>
+</header>
+
+<nav>
+  <a href="#about">About</a>
+  <a href="#services">Services</a>
+  <a href="#booking">Book</a>
+  <a href="#contact">Contact</a>
+</nav>
+
+<section id="about">
+  <h2>About Us</h2>
+  <p>We deliver clean, modern haircuts with fast service and professional care.</p>
+</section>
+
+<section id="services" class="services">
+  <h2>Our Services</h2>
+  <ul>
+    <li>Fade - R50</li>
+    <li>Trim - R30</li>
+    <li>Beard - R20</li>
+  </ul>
+</section>
+
+<section id="booking">
+  <h2>Book Appointment</h2>
+  <form id="bookingForm">
+    <input type="text" id="name" placeholder="Your Name" required />
+
+    <select id="serviceSelect" required>
+      <option value="">Select Service</option>
+      <option value="Fade">Fade</option>
+      <option value="Trim">Trim</option>
+      <option value="Beard">Beard</option>
+    </select>
+
+    <input type="date" id="date" required />
+    <input type="time" id="time" required />
+
+    <button type="submit">Book Now</button>
+  </form>
+</section>
+
+<section id="contact">
+  <h2>Contact</h2>
+  <p>WhatsApp: 0784475524</p>
+</section>
+
+<footer>
+  <p>&copy; 2026 Fresh Cuts Barber | Built by Tshepang</p>
+</footer>
+
+<script>
+  document.getElementById("bookingForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    const name = document.getElementById("name").value;
+    const service = document.getElementById("serviceSelect").value;
+    const date = document.getElementById("date").value;
+    const time = document.getElementById("time").value;
+
+    const phone = "27784475524";
+    const text = `Hello, I want to book a haircut. Name: ${name}, Service: ${service}, Date: ${date}, Time: ${time}`;
+
+    const url = `https://wa.me/${phone}?text=${encodeURIComponent(text)}`;
+
+    window.open(url, "_blank");
+  });
+</script>
+
+</body>
+</html>

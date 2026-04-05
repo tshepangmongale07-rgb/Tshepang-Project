@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Admin Panel</title>
+</head>
+<body>
+
+<h1>📋 Bookings</h1>
+
+<div id="bookingsList"></div>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+  const bookings = JSON.parse(localStorage.getItem("bookings")) || [];
+  const container = document.getElementById("bookingsList");
+
+  console.log("Container:", container);
+  console.log("Bookings:", bookings);
+
+  if (!container) {
+    alert("Error: bookingsList not found!");
+    return;
+  }
+
+  if (bookings.length === 0) {
+    container.innerHTML = "<p>No bookings yet.</p>";
+  } else {
+    bookings.forEach((b) => {
+      const div = document.createElement("div");
+
+      div.innerHTML = `
+        <strong>Name:</strong> ${b.name} <br>
+        <strong>Service:</strong> ${b.service} <br>
+        <strong>Date:</strong> ${b.date} <br>
+        <strong>Time:</strong> ${b.time}
+      `;
+
+      container.appendChild(div);
+    });
+  }
+
+});
+</script>
+
+</body>
+</html>

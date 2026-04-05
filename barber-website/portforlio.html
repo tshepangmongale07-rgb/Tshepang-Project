@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Tshepang | Web Developer</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial;
+      background: #0f172a;
+      color: white;
+    }
+
+    header {
+      text-align: center;
+      padding: 50px;
+    }
+
+    nav a {
+      margin: 10px;
+      color: gold;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    section {
+      padding: 40px;
+      text-align: center;
+    }
+
+    .projects {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .card {
+      background: #1e293b;
+      padding: 20px;
+      border-radius: 10px;
+      width: 250px;
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 10px 20px;
+      background: gold;
+      color: black;
+      text-decoration: none;
+      border-radius: 5px;
+      font-weight: bold;
+    }
+
+    input, textarea {
+      width: 80%;
+      padding: 10px;
+      margin: 10px;
+      border-radius: 5px;
+      border: none;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #020617;
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- 🔥 HEADER -->
+<header>
+  <h1>Hi, I'm Tshepang 👋</h1>
+  <p>I build modern websites for businesses</p>
+
+  <nav>
+    <a href="#about">About</a>
+    <a href="#projects">Projects</a>
+    <a href="#hire">Hire Me</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<!-- 🔥 ABOUT -->
+<section id="about">
+  <h2>About Me</h2>
+  <p>I create clean, fast and professional websites for businesses like barbers, restaurants and more.</p>
+</section>
+
+<!-- 🔥 PROJECTS -->
+<section id="projects">
+  <h2>My Projects</h2>
+
+  <div class="projects">
+
+    <div class="card">
+      <h3>Barber Booking System</h3>
+      <p>Website with booking + WhatsApp integration</p>
+      <a href="#" class="btn">View Project</a>
+    </div>
+
+    <div class="card">
+      <h3>Restaurant Website</h3>
+      <p>Menu + WhatsApp ordering system</p>
+      <a href="#" class="btn">View Project</a>
+    </div>
+
+    <div class="card">
+      <h3>Portfolio Website</h3>
+      <p>Personal brand website</p>
+      <a href="#" class="btn">View Project</a>
+    </div>
+
+  </div>
+</section>
+
+<!-- 🔥 HIRE ME -->
+<section id="hire">
+  <h2>Hire Me 💼</h2>
+  <p>I help businesses grow with modern websites.</p>
+
+  <a href="https://wa.me/2784475524?text=Hi%20I%20need%20a%20website" 
+     target="_blank" class="btn">
+    💬 Chat on WhatsApp
+  </a>
+</section>
+
+<!-- 🔥 CONTACT FORM -->
+<section id="contact">
+  <h2>Contact Me</h2>
+
+  <form onsubmit="sendEmail(event)">
+    <input type="text" id="name" placeholder="Your Name" required><br>
+    <input type="email" id="email" placeholder="Your Email" required><br>
+    <textarea id="message" placeholder="Your Message" required></textarea><br>
+    <button class="btn">Send Message</button>
+  </form>
+</section>
+
+<!-- 🔥 FOOTER -->
+<footer>
+  <p>© 2026 Tshepang | Web Developer</p>
+</footer>
+
+<!-- 🔥 EMAIL SCRIPT -->
+<script>
+function sendEmail(e) {
+  e.preventDefault();
+
+  const name = document.getElementById("name").value;
+  const email = document.getElementById("email").value;
+  const message = document.getElementById("message").value;
+
+  const subject = "Portfolio Contact";
+  const body = `Name: ${name}%0AEmail: ${email}%0AMessage: ${message}`;
+
+  window.location.href = `tshepangmongale07email@gmail.com?subject=${subject}&body=${body}`;
+}
+</script>
+
+</body>
+</html>
